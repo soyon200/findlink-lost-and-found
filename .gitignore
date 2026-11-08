@@ -1,0 +1,45 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# ---- build output ----
+/app/build
+/build
+/functions/node_modules
+/functions/.env
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ---- signing ----
+*.jks
+*.keystore
+keystore.properties
+
+# ---- IDE / local ----
+.idea/
+.kotlin/
+hsperfdata_*/
+*.log
+*.hprof
+captures/
+
+# ---- secrets ----
+local.properties
+
+# ---- template leftovers, not part of the app ----
+/backup
+/dataconnect

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- ইন্টারনেট ব্যবহারের পারমিশন -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="FindLink"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FindLink"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.InboxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.OfficeDepositActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ContactActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.ClaimActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.ItemDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReportFoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ReportLostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" /> <!-- SplashActivity: এটি এখন মেইন লঞ্চার (প্রথম স্ক্রিন) -->
+        <activity
+            android:name=".activities.SplashActivity"
+            android:alwaysRetainTaskState="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- LoginActivity -->
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" /> <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- ক্যামেরায় তোলা ছবি অস্থায়ীভাবে শেয়ার করার জন্য -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

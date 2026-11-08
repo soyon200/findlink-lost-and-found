@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addPostScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/addPostContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="28dp">
+
+        <TextView
+            style="@style/FindLink.Text.ScreenTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post a report" />
+
+        <TextView
+            style="@style/FindLink.Text.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Share a lost or found item so the right person can reach you." />
+
+        <!-- টিপ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_soft_surface"
+            android:orientation="horizontal"
+            android:padding="14dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Tip"
+                android:src="@drawable/ic_tip" />
+
+            <TextView
+                style="@style/FindLink.Text.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:lineSpacingExtra="3dp"
+                android:text="Never post card numbers, ID numbers or wallet contents. Ask a verification question instead."
+                android:textColor="@color/colorTextSecondary" />
+        </LinearLayout>
+
+        <!-- রিপোর্ট টাইপ -->
+        <TextView
+            style="@style/FindLink.Text.SectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="Report type" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_soft_surface"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <RadioGroup
+                android:id="@+id/rgReportType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbLost"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/colorWarning"
+                    android:checked="true"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp"
+                    android:text="Lost"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbFound"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/colorSuccess"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp"
+                    android:text="Found"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- আইটেমের তথ্য -->
+        <TextView
+            style="@style/FindLink.Text.SectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="Item details" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item name"
+            app:startIconDrawable="@drawable/ic_label"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Category (e.g. Electronics, Documents)"
+            app:startIconDrawable="@drawable/ic_category"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Location (e.g. Library, Cafeteria)"
+            app:startIconDrawable="@drawable/ic_location"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Contact phone number"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Description / verification question"
+            app:startIconDrawable="@drawable/ic_edit"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostDescription"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top|start"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="6"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- সিকিউরিটি কোড (শুধু Lost পোস্টে) -->
+        <LinearLayout
+            android:id="@+id/layoutSecurityCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_soft_surface"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                style="@style/FindLink.Text.SectionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Owner security code" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilSecurityCode"
+                style="@style/Widget.FindLink.TextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="4–6 digit code"
+                app:helperText="You will need this code to prove the item is yours."
+                app:startIconDrawable="@drawable/ic_lock"
+                app:startIconTint="@color/colorTextMuted">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSecurityCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="15sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/FindLink.Text.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="2dp"
+                android:text="Never share this code in the description or in chat. The finder will ask for it when you meet, and only then marks the item returned."
+                android:textColor="@color/colorTextSecondary" />
+        </LinearLayout>
+
+        <!-- ছবি (ঐচ্ছিক) -->
+        <TextView
+            style="@style/FindLink.Text.SectionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="Photo (optional)" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPhoto"
+            style="@style/Widget.FindLink.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutPhotoPrompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_circle_primary_soft">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Add photo"
+                            android:src="@drawable/ic_image" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/FindLink.Text.BodyStrong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Add a photo" />
+
+                        <TextView
+                            style="@style/FindLink.Text.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Automatically resized to keep the app fast" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:contentDescription="Add"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutPhotoPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivPhotoPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:background="@color/colorPrimaryLight"
+                        android:contentDescription="Selected photo"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/FindLink.Text.Caption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Photo selected" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnRemovePhoto"
+                            style="@style/Widget.FindLink.Button.Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="Remove"
+                            android:textColor="@color/colorDanger" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitPost"
+            style="@style/Widget.FindLink.Button"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:text="Post report"
+            app:backgroundTint="@color/colorPrimary"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/white" />
+
+        <TextView
+            style="@style/FindLink.Text.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Your post will appear in the Recent reports feed." />
+
+    </LinearLayout>
+</ScrollView>
+

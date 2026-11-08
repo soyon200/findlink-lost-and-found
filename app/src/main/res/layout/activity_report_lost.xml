@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="28dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="28dp">
+
+        <TextView
+            style="@style/FindLink.Text.ScreenTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Report a lost item" />
+
+        <TextView
+            style="@style/FindLink.Text.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="Tell us what went missing and where you last saw it." />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Item name"
+            app:startIconDrawable="@drawable/ic_label"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLostItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Category"
+            app:startIconDrawable="@drawable/ic_category"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLostCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Description (brand, colour, marks)"
+            app:startIconDrawable="@drawable/ic_edit"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLostDescription"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="top|start"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="5"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.FindLink.TextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Last seen location"
+            app:startIconDrawable="@drawable/ic_location"
+            app:startIconTint="@color/colorTextMuted">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLostLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:maxLines="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="15sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitLostReport"
+            style="@style/Widget.FindLink.Button"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="22dp"
+            android:text="Submit report"
+            app:backgroundTint="@color/colorWarning" />
+
+    </LinearLayout>
+</ScrollView>

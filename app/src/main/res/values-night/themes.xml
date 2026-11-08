@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ডিভাইস ডার্ক মোডে থাকলেও অ্যাপ একই লাইট, রিডেবল থিম ব্যবহার করবে -->
+    <style name="Base.Theme.FindLink" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimaryContainer">@color/colorPrimary</item>
+
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/colorAccentSoft</item>
+        <item name="colorOnSecondaryContainer">@color/colorPrimary</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceAlt</item>
+        <item name="colorOnSurface">@color/colorTextPrimary</item>
+        <item name="colorOnSurfaceVariant">@color/colorTextSecondary</item>
+        <item name="colorOutline">@color/colorDivider</item>
+        <item name="colorOutlineVariant">@color/colorDivider</item>
+        <item name="colorError">@color/colorDanger</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:statusBarColor">@color/colorStatusBar</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+        <item name="android:textColorHint">@color/colorTextMuted</item>
+
+        <item name="materialButtonStyle">@style/Widget.FindLink.Button</item>
+        <item name="materialCardViewStyle">@style/Widget.FindLink.Card</item>
+        <item name="textInputStyle">@style/Widget.FindLink.TextInput</item>
+    </style>
+</resources>
+

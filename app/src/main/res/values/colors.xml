@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ===== FindLink brand palette ===== -->
+    <color name="colorPrimary">#142F4D</color>
+    <color name="colorPrimaryDark">#0B1E33</color>
+    <color name="colorPrimaryLight">#E8EEF6</color>
+    <color name="colorAccent">#2D7FF9</color>
+    <color name="colorAccentSoft">#E5EFFE</color>
+
+    <!-- ===== Surfaces ===== -->
+    <color name="colorBackground">#F4F6FA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurfaceAlt">#FAFBFD</color>
+    <color name="colorDivider">#E2E8F0</color>
+
+    <!-- ===== Text ===== -->
+    <color name="colorTextPrimary">#14202B</color>
+    <color name="colorTextSecondary">#5A6B7B</color>
+    <color name="colorTextMuted">#8394A5</color>
+
+    <!-- ===== Status colours ===== -->
+    <color name="colorSuccess">#15803D</color>
+    <color name="colorSuccessSoft">#DCFCE7</color>
+    <color name="colorWarning">#B45309</color>
+    <color name="colorWarningSoft">#FEF3C7</color>
+    <color name="colorDanger">#C0392B</color>
+    <color name="colorDangerSoft">#FDE8E6</color>
+
+    <!-- ===== Navigation ===== -->
+    <color name="colorNavUnselected">#7A8A99</color>
+    <color name="colorStatusBar">#0B1E33</color>
+</resources>
