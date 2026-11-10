@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// FindLink — Firestore security rules
+// Paste this file into Firebase Console -> Firestore Database -> Rules -> Publish,
+// or deploy with: firebase deploy --only firestore:rules
+//
+// Every request must come from a signed-in Firebase user. Items are readable by
+// any signed-in user (that is the point of a lost & found feed), but a document
+// can only be created by its author, and ownership (userId) can never be changed.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // users/{uid} — profile card shown in chat and item details
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create, update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+    }
+
+    // items/{itemId} — lost and found reports
+    match /items/{itemId} {
+      allow read: if signedIn();
+
+      allow create: if signedIn()
+                    && request.resource.data.userId == request.auth.uid;
+
+      // The finder (not the author) has to be able to flip the status to AT_OFFICE,
+      // store a deposit code, and mark the item as RESOLVED after the handover,
+      // so any signed-in user may update — but ownership can never be transferred.
+      allow update: if signedIn()
+                    && request.resource.data.userId == resource.data.userId;
+
+      allow delete: if signedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    // chats/{chatId} — one thread per item between two people
+    match /chats/{chatId} {
+      allow read, update: if signedIn() && request.auth.uid in resource.data.participants;
+      allow create: if signedIn() && request.auth.uid in request.resource.data.participants;
+      allow delete: if false;
+
+      // messages/{messageId} — only the two participants of the parent chat
+      match /messages/{messageId} {
+        allow read: if signedIn()
+                    && request.auth.uid in get(/databases/$(database)/documents/chats/$(chatId)).data.participants;
+
+        allow create: if signedIn()
+                      && request.resource.data.senderId == request.auth.uid
+                      && request.auth.uid in get(/databases/$(database)/documents/chats/$(chatId)).data.participants;
+
+        allow update, delete: if false;
+      }
+    }
+  }
+}
