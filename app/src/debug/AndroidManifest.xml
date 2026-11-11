@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- শুধুমাত্র debug বিল্ডে: স্ক্রিন ভেরিফিকেশনের জন্য অ্যাক্টিভিটিগুলো adb থেকে খোলার সুবিধা -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.ItemDetailsActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.ClaimActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.ContactActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.InboxActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.ChatActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+        <activity
+            android:name=".activities.OfficeDepositActivity"
+            android:exported="true"
+            tools:replace="android:exported" />
+    </application>
+
+</manifest>
